@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="neo">
+      <UniqueIdentifier>{fd10e8a1-7fee-4cf0-8a64-1217f5b360e5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="neo\hooks\minhook\hde\hde32.h" />
+    <ClInclude Include="neo\hooks\minhook\hde\hde64.h" />
+    <ClInclude Include="neo\hooks\minhook\hde\pstdint.h" />
+    <ClInclude Include="neo\hooks\minhook\hde\table32.h" />
+    <ClInclude Include="neo\hooks\minhook\hde\table64.h" />
+    <ClInclude Include="neo\hooks\minhook\buffer.h" />
+    <ClInclude Include="neo\hooks\minhook\detour.h" />
+    <ClInclude Include="neo\hooks\minhook\minhook.h" />
+    <ClInclude Include="neo\hooks\minhook\trampoline.h" />
+    <ClInclude Include="neo\hooks\hooks.h" />
+    <ClInclude Include="neo\csgo\classes\user_cmd.h" />
+    <ClInclude Include="neo\csgo\sdk.h" />
+    <ClInclude Include="neo\csgo\math\vector_3d.h" />
+    <ClInclude Include="neo\features\movement.h" />
+    <ClInclude Include="neo\csgo\interfaces\base_client_dll.h" />
+    <ClInclude Include="neo\csgo\classes\client_class.h" />
+    <ClInclude Include="neo\csgo\classes\recv.h" />
+    <ClInclude Include="neo\csgo\interfaces\global_vars.h" />
+    <ClInclude Include="neo\csgo\utilities\utils.h" />
+    <ClInclude Include="neo\csgo\utilities\xor.h" />
+    <ClInclude Include="neo\csgo\classes\entities.h" />
+    <ClInclude Include="neo\csgo\netvars\netvars.h" />
+    <ClInclude Include="neo\csgo\interfaces\entity_list.h" />
+    <ClInclude Include="neo\csgo\interfaces\handle_entity.h" />
+    <ClInclude Include="neo\csgo\interfaces\engine.h" />
+    <ClInclude Include="neo\csgo\math\v_matrix.h" />
+    <ClInclude Include="neo\csgo\misc\e_handle.h" />
+    <ClInclude Include="neo\csgo\misc\base_handle.h" />
+    <ClInclude Include="neo\csgo\interfaces\i_app_system.h" />
+    <ClInclude Include="neo\csgo\globals.h" />
+    <ClInclude Include="neo\features\prediction.h" />
+    <ClInclude Include="neo\csgo\classes\pred.h" />
+    <ClInclude Include="neo\rendering\imgui\impl\imgui_impl_dx9.h" />
+    <ClInclude Include="neo\rendering\imgui\imgui.h" />
+    <ClInclude Include="neo\rendering\imgui\imgui_internal.h" />
+    <ClInclude Include="neo\rendering\menu.h" />
+    <ClInclude Include="neo\csgo\misc\input.h" />
+    <ClInclude Include="neo\rendering\imgui\imstb_rectpack.h" />
+    <ClInclude Include="neo\rendering\imgui\imstb_textedit.h" />
+    <ClInclude Include="neo\rendering\imgui\imstb_truetype.h" />
+    <ClInclude Include="neo\csgo\misc\options.h" />
+    <ClInclude Include="neo\features\esp.h" />
+    <ClInclude Include="neo\csgo\interfaces\i_client_entity.h" />
+    <ClInclude Include="neo\csgo\interfaces\i_client_networkable.h" />
+    <ClInclude Include="neo\csgo\interfaces\i_client_renderable.h" />
+    <ClInclude Include="neo\csgo\interfaces\i_client_thinkable.h" />
+    <ClInclude Include="neo\csgo\interfaces\i_client_unknown.h" />
+    <ClInclude Include="neo\csgo\interfaces\iv_model_info_client.h" />
+    <ClInclude Include="neo\csgo\classes\studio.h" />
+    <ClInclude Include="neo\csgo\math\math.h" />
+    <ClInclude Include="neo\csgo\misc\color.h" />
+    <ClInclude Include="neo\csgo\interfaces\i_colideable.h" />
+    <ClInclude Include="neo\csgo\misc\singleton.h" />
+    <ClInclude Include="neo\csgo\interfaces\client_mode.h" />
+    <ClInclude Include="neo\features\lag_compensation.h" />
+    <ClInclude Include="neo\csgo\interfaces\convar.h" />
+    <ClInclude Include="neo\csgo\interfaces\i_cvar.h" />
+    <ClInclude Include="neo\csgo\interfaces\i_convar.h" />
+    <ClInclude Include="neo\csgo\misc\utl_vector.h" />
+    <ClInclude Include="neo\csgo\misc\utl_memory.h" />
+    <ClInclude Include="neo\csgo\misc\utl_string.h" />
+    <ClInclude Include="neo\csgo\interfaces\client_state.h" />
+    <ClInclude Include="neo\csgo\interfaces\i_surface.h" />
+    <ClInclude Include="neo\csgo\math\vector_2d.h" />
+    <ClInclude Include="neo\csgo\interfaces\input_system.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="neo\hooks\minhook\hde\hde32.c" />
+    <ClCompile Include="neo\hooks\minhook\hde\hde64.c" />
+    <ClCompile Include="neo\hooks\minhook\buffer.c" />
+    <ClCompile Include="neo\hooks\minhook\hook.c" />
+    <ClCompile Include="neo\hooks\minhook\trampoline.c" />
+    <ClCompile Include="neo\hooks\hooks.cpp" />
+    <ClCompile Include="neo\hooks\functions\create_move_hk.cpp" />
+    <ClCompile Include="neo\features\movement.cpp" />
+    <ClCompile Include="neo\csgo\utilities\utils.cpp" />
+    <ClCompile Include="neo\neo.cpp" />
+    <ClCompile Include="neo\csgo\netvars\netvars.cpp" />
+    <ClCompile Include="neo\csgo\globals.cpp" />
+    <ClCompile Include="neo\features\prediction.cpp" />
+    <ClCompile Include="neo\rendering\imgui\impl\imgui_impl_dx9.cpp" />
+    <ClCompile Include="neo\rendering\imgui\imgui.cpp" />
+    <ClCompile Include="neo\rendering\imgui\imgui_draw.cpp" />
+    <ClCompile Include="neo\hooks\functions\end_scene.cpp" />
+    <ClCompile Include="neo\rendering\menu.cpp" />
+    <ClCompile Include="neo\csgo\misc\input.cpp" />
+    <ClCompile Include="neo\rendering\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="neo\features\esp.cpp" />
+    <ClCompile Include="neo\csgo\misc\color.cpp" />
+    <ClCompile Include="neo\csgo\math\math.cpp" />
+    <ClCompile Include="neo\hooks\functions\override_view.cpp" />
+    <ClCompile Include="neo\features\lag_compensation.cpp" />
+    <ClCompile Include="neo\hooks\functions\frame_stage_notify.cpp" />
+    <ClCompile Include="neo\hooks\functions\send_datagram.cpp" />
+    <ClCompile Include="neo\hooks\functions\lock_cursor.cpp" />
+  </ItemGroup>
+</Project>
