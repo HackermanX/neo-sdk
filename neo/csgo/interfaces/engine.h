@@ -6,7 +6,7 @@ typedef struct InputContextHandle_t__* InputContextHandle_t;
 struct client_textmessage_t;
 struct model_t;
 class SurfInfo;
-class IMaterial;
+class i_material;
 class CSentence;
 class CAudioSource;
 class AudioState_t;
@@ -106,7 +106,7 @@ class iv_engine_client
 public:
 	virtual int                   GetIntersectingSurfaces(const model_t* model, const vec3_t& vCenter, const float radius, const bool bOnlyVisibleSurfaces, SurfInfo* pInfos, const int nMaxInfos) = 0;
 	virtual vec3_t                GetLightForPoint(const vec3_t& pos, bool bClamp) = 0;
-	virtual IMaterial* TraceLineMaterialAndLighting(const vec3_t& start, const vec3_t& end, vec3_t& diffuseLightColor, vec3_t& baseColor) = 0;
+	virtual i_material* TraceLineMaterialAndLighting(const vec3_t& start, const vec3_t& end, vec3_t& diffuseLightColor, vec3_t& baseColor) = 0;
 	virtual const char* ParseFile(const char* data, char* token, int maxlen) = 0;
 	virtual bool                  CopyFile(const char* source, const char* destination) = 0;
 	virtual void                  screen_size(int& width, int& height) = 0;
@@ -183,7 +183,7 @@ public:
 	virtual void* SaveAllocMemory(size_t num, size_t size) = 0;
 	virtual void                  SaveFreeMemory(void* pSaveMem) = 0;
 	virtual INetChannelInfo* get_netchan_info(void) = 0;
-	virtual void                  DebugDrawPhysCollide(const CPhysCollide* pCollide, IMaterial* pMaterial, const matrix3x4_t& transform, const uint8_t* color) = 0; //79
+	virtual void                  DebugDrawPhysCollide(const CPhysCollide* pCollide, i_material* pMaterial, const matrix3x4_t& transform, const uint8_t* color) = 0; //79
 	virtual void                  CheckPoint(const char* pName) = 0; // 80
 	virtual void                  DrawPortals() = 0;
 	virtual bool                  IsPlayingDemo(void) = 0;

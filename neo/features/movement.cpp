@@ -3,7 +3,7 @@
 
 namespace move {
 	void bhop(c_cmd* cmd) {
-		if (!options::bhop) return;
+		if (!options::move::bhop) return;
 		if (!(g::local->m_flags() & fl_onground))
 			cmd->buttons &= ~in_jump;
 	}

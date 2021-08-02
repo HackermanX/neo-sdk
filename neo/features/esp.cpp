@@ -52,22 +52,8 @@ namespace esp {
 		if (pl->is_dormant() || !pl->is_alive() || !g::local)
 			return false;
 
-		ctx.player = pl;
-		ctx.is_enemy = g::local->team() != pl->team();
-
-		if (!ctx.is_enemy) return false;
-
-		auto head = pl->get_hitbox_pos(HITBOX_HEAD);
-		auto origin = pl->vec_origin();
-
-		head.z += 15;
-
-		if (!math::w2s(head, ctx.head_pos) ||
-			!math::w2s(origin, ctx.feet_pos))
+		if (!(g::local->team() != pl->team())) 
 			return false;
-
-		auto h = fabs(ctx.head_pos.y - ctx.feet_pos.y);
-		auto w = h / 1.65f;
 
 		return true;
 	}
@@ -76,10 +62,12 @@ namespace esp {
 		auto player = player_();
 		for (auto i = 1; i <= csgo::entity_list->get_highest_entity_index(); ++i) {
 			auto entity = entity_t::get_entity_by_index(i);
+
 			if (!entity) continue;
+
 			if (i <= csgo::globals->max_clients) {
 				if (player.begin((player_t*)entity)) {
-					if (options::box) player.box(entity);
+					if (options::esp::box) player.box(entity);
 				}
 			}
 		}
@@ -94,6 +82,6 @@ namespace esp {
 
 	void player_::box(entity_t* ent) {
 		auto box = get_bounding_box(ent);
-		draw_box(box.left, box.top, box.right, box.bottom, color(255, 255, 255, 255), 1.f);
+		draw_box(box.left, box.top, box.right, box.bottom, options::esp::box_color, 1.f);
 	}
 }

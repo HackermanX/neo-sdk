@@ -12,6 +12,9 @@ namespace hooks {
 	inline detour_hook fsn;
 	inline detour_hook send_data;
 	inline detour_hook lock_cursor;
+	inline detour_hook draw_model_execute;
+
+	using original_dme = void(__thiscall*)(iv_model_render*, i_mat_render_context*, const draw_model_state_t*, const model_render_info_t*, matrix3x4_t*);
 
 	void init();
 	inline constexpr void* get_vfunc(void* thisptr, std::size_t nIndex) {
@@ -23,4 +26,5 @@ namespace hooks {
 	void __stdcall fsn_hk(frame_stage stage);
 	int __fastcall send_datagram(i_net_channel* thisptr, int edx, bf_write* datagram);
 	void __fastcall lock_cursor_hk(void* _this);
+	void __stdcall draw_model_execute_hk(i_mat_render_context* context, const draw_model_state_t& state, const model_render_info_t& info, matrix3x4_t* bone);
 }

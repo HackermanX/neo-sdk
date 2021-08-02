@@ -22,7 +22,7 @@ void __stdcall hooks::fsn_hk(frame_stage stage) {
 	case frame_stage::NET_UPDATE_POSTDATAUPDATE_END:
 		break;
 	case frame_stage::NET_UPDATE_END:
-		if (options::backtrack && g::local && g::local->is_alive()) {
+		if (options::legit::backtrack && g::local && g::local->is_alive()) {
 			for (uint32_t i = 1; i <= csgo::globals->max_clients; i++) {
 				player_t* player = reinterpret_cast<player_t*>(csgo::entity_list->get_client_entity(i));
 				if (!player || player->team() == g::local->team()

@@ -17,6 +17,8 @@
 #include "interfaces/client_state.h"
 #include "interfaces/i_surface.h"
 #include "interfaces/input_system.h"
+#include "interfaces/iv_model_render.h"
+#include "interfaces/i_material_system.h"
 
 struct IDirect3DDevice9;
 
@@ -35,6 +37,8 @@ namespace csgo {
 	inline client_state* client_s;
 	inline i_surface* surface;
 	inline i_input_sys* input;
+	inline iv_model_render* model_render;
+	inline i_material_system* material_system;
 
 	__forceinline void init() {
 		client = utils::create_interface<i_base_client_dll>(xor("client.dll"), xor("VClient018"));
@@ -46,6 +50,8 @@ namespace csgo {
 		cvar = utils::create_interface<i_cvar>(xor("vstdlib.dll"), xor("VEngineCvar007"));
 		surface = utils::create_interface<i_surface>(xor("vguimatsurface.dll"), xor("VGUI_Surface031"));
 		input = utils::create_interface<i_input_sys>(xor("inputsystem.dll"), xor("InputSystemVersion001"));
+		model_render = utils::create_interface<iv_model_render>(xor("engine.dll"), xor("VEngineModel016"));
+		material_system = utils::create_interface<i_material_system>(xor("materialsystem.dll"), xor("VMaterialSystem080"));
 
 		client_mode = **reinterpret_cast<i_client_mode***>((*reinterpret_cast<uintptr_t**>(client))[10] + 5);
 		globals = **reinterpret_cast<c_global_vars_base***>((utils::pattern_scan(xor("client.dll"), xor("A1 ? ? ? ? 5E 8B 40 10")) + 1));
@@ -72,5 +78,7 @@ namespace csgo {
 		print_interface(client_s);
 		print_interface(surface);
 		print_interface(input);
+		print_interface(model_render);
+		print_interface(material_system);
     }
 }

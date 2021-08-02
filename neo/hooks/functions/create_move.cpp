@@ -12,7 +12,7 @@ bool __fastcall hooks::create_move_hk(void* thisptr, int edx, float fl_input_sam
 
 	auto netchannel = csgo::client_s->net_channel;
 
-	if (options::fake_latency) fake_latency::update_sequence();
+	if (options::legit::fake_latency) fake_latency::update_sequence();
 	else fake_latency::clear_sequence();
 	if (netchannel != nullptr) {
 		if (!send_data.is_hooked())

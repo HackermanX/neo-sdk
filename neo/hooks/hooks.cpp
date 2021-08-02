@@ -22,5 +22,8 @@ namespace hooks {
 
 		if (!lock_cursor.create(get_vfunc(csgo::surface, 67), &lock_cursor_hk))
 			throw std::runtime_error("failed to initialize lock_cursor_hk");
+
+		if (!draw_model_execute.create(get_vfunc(csgo::model_render, 21), &draw_model_execute_hk))
+			throw std::runtime_error("failed to initialize draw_model_execute_hk");
 	}
 }

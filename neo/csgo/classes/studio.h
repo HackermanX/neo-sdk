@@ -166,7 +166,7 @@ struct mstudiohitboxset_t
 struct model_t
 {
     void* fnHandle;               //0x0000 
-    char    szName[260];            //0x0004 
+    char    name[260];            //0x0004 
     __int32 nLoadFlags;             //0x0108 
     __int32 nServerCount;           //0x010C 
     __int32 type;                   //0x0110 

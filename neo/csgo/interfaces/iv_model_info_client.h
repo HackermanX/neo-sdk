@@ -7,7 +7,7 @@ class IClientRenderable;
 class CStudioHdr;
 struct virtualmodel_t;
 class vcollide_t;
-class IMaterial;
+class i_material;
 class constvec3_t;
 class CGameTrace;
 typedef CGameTrace trace_t;
@@ -41,7 +41,7 @@ public:
 	virtual void UNUSE11D() = 0;
 	virtual RenderableTranslucencyType_t    ComputeTranslucencyType(const model_t* model, int nSkin, int nBody) = 0;
 	virtual int                             GetModelMaterialCount(const model_t* model) const = 0;
-	virtual void                            GetModelMaterials(const model_t* model, int count, IMaterial** ppMaterial) = 0;
+	virtual void                            GetModelMaterials(const model_t* model, int count, i_material** ppMaterial) = 0;
 	virtual bool                            IsModelVertexLit(const model_t* model) const = 0;
 	virtual const char* GetModelKeyValueText(const model_t* model) = 0;
 	virtual bool                            GetModelKeyValue(const model_t* model, CUtlBuffer& buf) = 0;

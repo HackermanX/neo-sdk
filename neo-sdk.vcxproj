@@ -24,9 +24,11 @@
     <ClCompile Include="neo\csgo\misc\color.cpp" />
     <ClCompile Include="neo\csgo\misc\input.cpp" />
     <ClCompile Include="neo\csgo\netvars\netvars.cpp" />
+    <ClCompile Include="neo\features\chams.cpp" />
     <ClCompile Include="neo\features\esp.cpp" />
     <ClCompile Include="neo\features\lag_compensation.cpp" />
     <ClCompile Include="neo\features\prediction.cpp" />
+    <ClCompile Include="neo\hooks\functions\draw_model_execute.cpp" />
     <ClCompile Include="neo\hooks\functions\end_scene.cpp" />
     <ClCompile Include="neo\hooks\functions\frame_stage_notify.cpp" />
     <ClCompile Include="neo\hooks\functions\lock_cursor.cpp" />
@@ -53,6 +55,7 @@
     <ClInclude Include="neo\csgo\interfaces\handle_entity.h" />
     <ClInclude Include="neo\csgo\interfaces\input_system.h" />
     <ClInclude Include="neo\csgo\interfaces\iv_model_info_client.h" />
+    <ClInclude Include="neo\csgo\interfaces\iv_model_render.h" />
     <ClInclude Include="neo\csgo\interfaces\i_app_system.h" />
     <ClInclude Include="neo\csgo\interfaces\i_client_entity.h" />
     <ClInclude Include="neo\csgo\interfaces\i_client_networkable.h" />
@@ -63,6 +66,7 @@
     <ClInclude Include="neo\csgo\interfaces\i_convar.h" />
     <ClInclude Include="neo\csgo\interfaces\i_cvar.h" />
     <ClInclude Include="neo\csgo\interfaces\client_state.h" />
+    <ClInclude Include="neo\csgo\interfaces\i_material_system.h" />
     <ClInclude Include="neo\csgo\interfaces\i_surface.h" />
     <ClInclude Include="neo\csgo\math\math.h" />
     <ClInclude Include="neo\csgo\math\vector_2d.h" />
@@ -81,6 +85,7 @@
     <ClInclude Include="neo\csgo\sdk.h" />
     <ClInclude Include="neo\csgo\utilities\utils.h" />
     <ClInclude Include="neo\csgo\utilities\xor.h" />
+    <ClInclude Include="neo\features\chams.h" />
     <ClInclude Include="neo\features\esp.h" />
     <ClInclude Include="neo\features\lag_compensation.h" />
     <ClInclude Include="neo\features\movement.h" />
@@ -109,7 +114,7 @@
   <ItemGroup>
     <ClCompile Include="neo\csgo\utilities\utils.cpp" />
     <ClCompile Include="neo\features\movement.cpp" />
-    <ClCompile Include="neo\hooks\functions\create_move_hk.cpp" />
+    <ClCompile Include="neo\hooks\functions\create_move.cpp" />
     <ClCompile Include="neo\hooks\hooks.cpp" />
     <ClCompile Include="neo\hooks\minhook\buffer.c" />
     <ClCompile Include="neo\hooks\minhook\hde\hde32.c" />
@@ -187,7 +192,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <SDLCheck>
       </SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;NEOSDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -207,7 +212,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>false</SDLCheck>

@@ -82,7 +82,7 @@
 			data.clear();
 			return;
 		}
-		if (!options::backtrack) {
+		if (!options::legit::backtrack) {
 			data.clear();
 			return;
 		}

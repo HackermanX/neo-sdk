@@ -3870,6 +3870,23 @@ bool ImGui::ColorEdit3(const char* label, float col[3], ImGuiColorEditFlags flag
 // Edit colors components (each component in 0.0f..1.0f range).
 // See enum ImGuiColorEditFlags_ for available options. e.g. Only access 3 floats if ImGuiColorEditFlags_NoAlpha flag is set.
 // With typical options: Left-click on colored square to open color picker. Right-click to open option menu. CTRL-Click over input fields to edit them and TAB to go to next item.
+
+bool ImGui::ColorEdit5(const char* label, color* v, ImGuiColorEditFlags flags)
+{
+    auto clr = ImVec4{
+        v->r() / 255.0f,
+        v->g() / 255.0f,
+        v->b() / 255.0f,
+        v->a() / 255.0f
+    };
+
+    if (ImGui::ColorEdit4(label, &clr.x, flags)) {
+        v->set_color(clr.x, clr.y, clr.z, clr.w);
+        return true;
+    }
+    return false;
+}
+
 bool ImGui::ColorEdit4(const char* label, float col[4], ImGuiColorEditFlags flags)
 {
     ImGuiWindow* window = GetCurrentWindow();
