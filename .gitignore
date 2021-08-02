@@ -1,0 +1,16 @@
+
+.vs/neo-sdk/v16/.suo
+*.db
+*.db-wal
+*.db-shm
+*.ipch
+*.opendb
+*.obj
+*.dll
+*.recipe
+*.ilk
+*.pdb
+*.log
+*.tlog
+*.txt
+*.idb

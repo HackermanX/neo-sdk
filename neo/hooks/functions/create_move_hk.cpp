@@ -10,7 +10,6 @@ bool __fastcall hooks::create_move_hk(void* thisptr, int edx, float fl_input_sam
 	g::local = csgo::entity_list->get<player_t>(csgo::engine->get_local_player());
 	if (!cmd || !g::local || !cmd->command_number) return original;
 
-	auto pre_pred_flags = g::local->m_flags();
 	auto netchannel = csgo::client_s->net_channel;
 
 	if (options::fake_latency) fake_latency::update_sequence();
@@ -20,7 +19,7 @@ bool __fastcall hooks::create_move_hk(void* thisptr, int edx, float fl_input_sam
 			send_data.create(get_vfunc(netchannel, 46), &send_datagram);
 	} //nasa
 
-	move::bhop(cmd, pre_pred_flags);
+	move::bhop(cmd);
 
 	g_bt.on_move(cmd);
 
