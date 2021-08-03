@@ -10,7 +10,7 @@ namespace hooks {
 	inline detour_hook end_scene;
 	inline detour_hook override_view;
 	inline detour_hook fsn;
-	inline detour_hook send_data;
+	inline detour_hook send_datagram;
 	inline detour_hook lock_cursor;
 	inline detour_hook draw_model_execute;
 
@@ -24,7 +24,7 @@ namespace hooks {
 	long __stdcall end_scene_hk(IDirect3DDevice9* pDevice);
 	void __fastcall override_view_hk(void* _this, int edx, c_view_setup* view);
 	void __stdcall fsn_hk(frame_stage stage);
-	int __fastcall send_datagram(i_net_channel* thisptr, int edx, bf_write* datagram);
+	int __fastcall send_datagram_hk(i_net_channel* thisptr, int edx, bf_write* datagram);
 	void __fastcall lock_cursor_hk(void* _this);
 	void __stdcall draw_model_execute_hk(i_mat_render_context* context, const draw_model_state_t& state, const model_render_info_t& info, matrix3x4_t* bone);
 }

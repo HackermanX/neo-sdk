@@ -25,5 +25,8 @@ namespace hooks {
 
 		if (!draw_model_execute.create(get_vfunc(csgo::model_render, 21), &draw_model_execute_hk))
 			throw std::runtime_error("failed to initialize draw_model_execute_hk");
+
+		if (!send_datagram.create(utils::pattern_scan("engine.dll", "55 8B EC 83 E4 F0 B8 ? ? ? ? E8 ? ? ? ? 56 57 8B F9 89 7C 24 18"), &send_datagram_hk))
+			throw std::runtime_error("failed to initialize send_datagram_hk");
 	}
 }
