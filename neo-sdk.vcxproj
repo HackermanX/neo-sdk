@@ -39,6 +39,8 @@
     <ClCompile Include="neo\rendering\imgui\imgui_widgets.cpp" />
     <ClCompile Include="neo\rendering\imgui\impl\imgui_impl_dx9.cpp" />
     <ClCompile Include="neo\rendering\menu.cpp" />
+    <ClCompile Include="neo\rendering\render.cpp" />
+    <ClInclude Include="neo\buildtype.h" />
     <ClInclude Include="neo\csgo\classes\client_class.h" />
     <ClInclude Include="neo\csgo\classes\entities.h" />
     <ClInclude Include="neo\csgo\classes\pred.h" />
@@ -101,6 +103,8 @@
     <ClInclude Include="neo\rendering\imgui\imstb_textedit.h" />
     <ClInclude Include="neo\rendering\imgui\imstb_truetype.h" />
     <ClInclude Include="neo\rendering\menu.h" />
+    <ClInclude Include="neo\rendering\render.h" />
+    <ClInclude Include="neo\singleton.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="neo\csgo\utilities\utils.cpp" />

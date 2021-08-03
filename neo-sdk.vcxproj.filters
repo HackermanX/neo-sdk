@@ -64,7 +64,13 @@
     <ClInclude Include="neo\features\chams.h" />
     <ClInclude Include="neo\csgo\interfaces\iv_model_render.h" />
     <ClInclude Include="neo\csgo\interfaces\i_material_system.h" />
+<<<<<<< Updated upstream
     <ClInclude Include="neo\hooks\steam_hook.h" />
+=======
+    <ClInclude Include="neo\buildtype.h" />
+    <ClInclude Include="neo\rendering\render.h" />
+    <ClInclude Include="neo\singleton.h" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="neo\hooks\hooks.cpp" />
@@ -92,5 +98,6 @@
     <ClCompile Include="neo\hooks\functions\lock_cursor.cpp" />
     <ClCompile Include="neo\features\chams.cpp" />
     <ClCompile Include="neo\hooks\functions\draw_model_execute.cpp" />
+    <ClCompile Include="neo\rendering\render.cpp" />
   </ItemGroup>
 </Project>

@@ -4,6 +4,7 @@
 #include "hooks/hooks.h"
 #include "rendering/menu.h"
 #include "csgo/misc/input.h"
+#include "buildtype.h"
 
 void hotkeys(LPVOID base) {
 	input_system::register_hotkey(VK_INSERT, []()
@@ -13,7 +14,9 @@ void hotkeys(LPVOID base) {
 }
 
 unsigned long __stdcall on_attach(void* base) {
-	utils::attach_console(); //can make attach only in debug now ig but it was usefull in release at first too
+#if debug
+	utils::attach_console(); //cummed
+#endif
 	csgo::init();
 	csgo::dump();
 	netvars.init();

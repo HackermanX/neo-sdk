@@ -18,24 +18,28 @@ namespace menu {
 		auto flags_alpha = ImGuiColorEditFlags_NoInputs | ImGuiColorEditFlags_AlphaBar | ImGuiColorEditFlags_NoTooltip | ImGuiColorEditFlags_AlphaPreview;
 		auto flags_no_alpha = ImGuiColorEditFlags_NoInputs | ImGuiColorEditFlags_NoTooltip;
 
-		ImGui::SetNextWindowSize({ 185.f, 150.f });
+		ImGui::SetNextWindowSize({ 300.f, 350.f });
 
 		ImGui::Begin("neo-sdk", nullptr, flags);
 		{
 			ImGui::BeginTabBar("stuff", ImGuiTabBarFlags_Reorderable | ImGuiTabBarFlags_FittingPolicyScroll | ImGuiTabBarFlags_NoTooltip);
 			if (ImGui::BeginTabItem("legit")) {
 				ImGui::Checkbox("backtrack", &options::legit::backtrack);
-				ImGui::Checkbox("extendo", &options::legit::fake_latency);
+
+				if (options::legit::backtrack)
+					ImGui::Checkbox("extended backtrack", &options::legit::fake_latency);
 				ImGui::EndTabItem();
 			}
 			if (ImGui::BeginTabItem("esp")) {
 				ImGui::Checkbox("box esp", &options::esp::box); ImGui::SameLine();
-				ImGui::ColorEdit5("##box color", &options::esp::box_color, flags_alpha);
+				ImGui::ColorEdit5("box color", &options::esp::box_color, flags_alpha);
+
 				ImGui::EndTabItem();
 			}
 			if (ImGui::BeginTabItem("chams")) {
 				ImGui::Checkbox("chams", &options::chams::on); ImGui::SameLine();
 				ImGui::ColorEdit5("##chams visible", &options::chams::visible, flags_alpha);
+
 				ImGui::Checkbox("chams xqz", &options::chams::xqz); ImGui::SameLine();
 				ImGui::ColorEdit5("##chams invisible", &options::chams::invisible, flags_alpha);
 				ImGui::EndTabItem();
