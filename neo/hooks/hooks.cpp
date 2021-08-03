@@ -3,30 +3,18 @@
 
 namespace hooks {
 	void init() {
-		//initialize hooks
-		if (MH_Initialize() != MH_OK)
-			throw std::runtime_error("failed to initialize your shit cheat.");
-		//create hooks
+		steam::hook<create_move>(get_vfunc(csgo::client_mode, 24));
 
-		if (!create_move.create(get_vfunc(csgo::client_mode, 24), &create_move_hk))
-			throw std::runtime_error("failed to initialize create_move_hk");
+		steam::hook<end_scene>(get_vfunc(csgo::d3_device, 42));
 
-		if (!end_scene.create(get_vfunc(csgo::d3_device, 42), &end_scene_hk))
-			throw std::runtime_error("failed to initialize end_scene_hk");
+		steam::hook<override_view>(get_vfunc(csgo::client_mode, 18));
 
-		if (!override_view.create(get_vfunc(csgo::client_mode, 18), &override_view_hk))
-			throw std::runtime_error("failed to initialize override_view_hk");
+		steam::hook<frame_stage_notify>(get_vfunc(csgo::client, 37));
 
-		if (!fsn.create(get_vfunc(csgo::client, 37), &fsn_hk))
-			throw std::runtime_error("failed to initialize fsn_hk");
+		steam::hook<lock_cursor>(get_vfunc(csgo::surface, 67));
 
-		if (!lock_cursor.create(get_vfunc(csgo::surface, 67), &lock_cursor_hk))
-			throw std::runtime_error("failed to initialize lock_cursor_hk");
+		steam::hook<draw_model_execute>(get_vfunc(csgo::model_render, 21));
 
-		if (!draw_model_execute.create(get_vfunc(csgo::model_render, 21), &draw_model_execute_hk))
-			throw std::runtime_error("failed to initialize draw_model_execute_hk");
-
-		if (!send_datagram.create(utils::pattern_scan("engine.dll", "55 8B EC 83 E4 F0 B8 ? ? ? ? E8 ? ? ? ? 56 57 8B F9 89 7C 24 18"), &send_datagram_hk))
-			throw std::runtime_error("failed to initialize send_datagram_hk");
+		steam::hook<send_datagram>(utils::pattern_scan("engine.dll", "55 8B EC 83 E4 F0 B8 ? ? ? ? E8 ? ? ? ? 56 57 8B F9 89 7C 24 18")); //thanks tyler
 	}
 }

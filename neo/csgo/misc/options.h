@@ -7,7 +7,7 @@ namespace options {
 
 	namespace legit {
 		inline bool backtrack = false;
-		inline bool fake_latency = false;
+		inline bool fake_latency = true;
 	}
 
 	namespace esp {

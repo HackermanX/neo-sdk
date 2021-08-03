@@ -4,8 +4,7 @@
 #include "../../features/lag_compensation.h"
 #include "../../csgo/misc/options.h"
 
-bool __fastcall hooks::create_move_hk(void* thisptr, int edx, float fl_input_sample_time, c_cmd* cmd) {
-	static auto original = create_move.get_original<decltype(&create_move_hk)>();
+bool __fastcall hooks::create_move::hook(void* thisptr, int edx, float fl_input_sample_time, c_cmd* cmd) {
 	original(thisptr, edx, fl_input_sample_time, cmd);
 	g::local = csgo::entity_list->get<player_t>(csgo::engine->get_local_player());
 	if (!cmd || !g::local || !cmd->command_number) return original;

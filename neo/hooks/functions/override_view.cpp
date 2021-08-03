@@ -1,7 +1,6 @@
 #include "../hooks.h"
 
-void __fastcall hooks::override_view_hk(void* _this, int edx, c_view_setup* view) {
-	static auto original = override_view.get_original<decltype(&override_view_hk)>();
+void __fastcall hooks::override_view::hook(void* _this, int edx, c_view_setup* view) {
 	if (!csgo::engine->is_connected() || !csgo::engine->is_ingame())
 		return original(csgo::client_mode, edx, view);
 

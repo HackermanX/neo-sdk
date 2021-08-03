@@ -1,8 +1,7 @@
 #include "../hooks.h"
 #include "../../rendering/menu.h"
 
-void __fastcall hooks::lock_cursor_hk(void* _this) {
-	static auto original = lock_cursor.get_original<decltype(&lock_cursor_hk)>();
+void __fastcall hooks::lock_cursor::hook(void* _this) {
 	if (menu::is_visible()) {
 		csgo::surface->unlock_cursor();
 		csgo::input->reset_input_state();

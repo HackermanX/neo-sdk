@@ -2,8 +2,7 @@
 #include "../../features/lag_compensation.h"
 #include "../../csgo/misc/options.h"
 
-int __fastcall hooks::send_datagram_hk(i_net_channel* thisptr, int edx, bf_write* datagram) {
-	static auto original = send_datagram.get_original<decltype(&send_datagram_hk)>();
+int __fastcall hooks::send_datagram::hook(i_net_channel* thisptr, int edx, bf_write* datagram) {
 	if (!options::legit::fake_latency || !csgo::engine->is_ingame() || !g::local || datagram != nullptr)
 		return original(thisptr, edx, datagram);
 	int instate = thisptr->in_reliable_state;

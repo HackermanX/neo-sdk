@@ -21,7 +21,6 @@ namespace chams {
 	}
 
 	void on_dme(i_mat_render_context* ctx, const draw_model_state_t& state, const model_render_info_t& info, matrix3x4_t* bone) {
-		static auto original = hooks::draw_model_execute.get_original<hooks::original_dme>();
 		player_t* player = player_t::get_player_by_index(info.entity_index);
 
 		if (info.entity_index > 0 && info.entity_index <= 64) {
@@ -36,7 +35,7 @@ namespace chams {
 					if (options::chams::on) {
 						if (options::chams::xqz) {
 							override_material(1, true, color_back);
-							original(csgo::model_render, ctx, &state, &info, bone);
+							hooks::draw_model_execute::original(csgo::model_render, 0, ctx, state, info, bone);
 							override_material(1, false, color_front);
 						}
 						else {

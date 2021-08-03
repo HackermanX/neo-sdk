@@ -3,8 +3,7 @@
 #include "../../rendering/menu.h"
 #include "../../features/esp.h"
 
-long __stdcall hooks::end_scene_hk(IDirect3DDevice9* device) {
-	static auto original = end_scene.get_original<decltype(&end_scene_hk)>();
+long __stdcall hooks::end_scene::hook(IDirect3DDevice9* device) {
 	IDirect3DStateBlock9* pixel_state = NULL;
 	IDirect3DVertexDeclaration9* vertDec;
 	IDirect3DVertexShader9* vertShader;

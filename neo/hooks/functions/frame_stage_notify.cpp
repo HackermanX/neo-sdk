@@ -2,12 +2,10 @@
 #include "../../csgo/misc/options.h"
 #include "../../features/lag_compensation.h"
 
-void __stdcall hooks::fsn_hk(frame_stage stage) {
-	using fn = void(__thiscall*)(i_base_client_dll*, frame_stage);
-	static auto original = fsn.get_original<fn>();
+void __stdcall hooks::frame_stage_notify::hook(frame_stage stage) {
 	if (!csgo::engine->is_ingame() || !g::local) {
 		fake_latency::clear_sequence();
-		return original(csgo::client, stage);
+		return original(stage);
 	}
 	static auto set_interpolation_flags = [](player_t* e, int flag) {
 		const auto var_map = (uintptr_t)e + 36;
@@ -36,5 +34,5 @@ void __stdcall hooks::fsn_hk(frame_stage stage) {
 		g_bt.on_fsn();
 		break;
 	} 
-	return original(csgo::client, stage);
+	return original(stage);
 }
