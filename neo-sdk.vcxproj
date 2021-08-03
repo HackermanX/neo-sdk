@@ -104,7 +104,6 @@
     <ClInclude Include="neo\rendering\imgui\imstb_truetype.h" />
     <ClInclude Include="neo\rendering\menu.h" />
     <ClInclude Include="neo\rendering\render.h" />
-    <ClInclude Include="neo\singleton.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="neo\csgo\utilities\utils.cpp" />

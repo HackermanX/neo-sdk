@@ -28,7 +28,7 @@ namespace esp {
 	}
 
 	void player_::box(entity_t* ent) {
-		auto box = render::get().get_bounding_box(ent);
-		render::get().draw_box(box.left, box.top, box.right, box.bottom, options::esp::box_color, 1.f);
+		auto box = render::get_bounding_box(ent);
+		render::draw_box(box.left, box.top, box.right, box.bottom, options::esp::box_color, 1.f);
 	}
 }
