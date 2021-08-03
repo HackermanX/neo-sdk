@@ -1,5 +1,6 @@
 #include "render.h"
 #include "../rendering/imgui/imgui.h"
+#include "../csgo/misc/options.h"
 #include "../features/lag_compensation.h"
 
 RECT render::get_bounding_box(entity_t* ent) {

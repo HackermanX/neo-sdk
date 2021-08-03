@@ -27,6 +27,7 @@
     <ClCompile Include="neo\features\chams.cpp" />
     <ClCompile Include="neo\features\esp.cpp" />
     <ClCompile Include="neo\features\lag_compensation.cpp" />
+    <ClCompile Include="neo\features\misc.cpp" />
     <ClCompile Include="neo\features\prediction.cpp" />
     <ClCompile Include="neo\hooks\functions\draw_model_execute.cpp" />
     <ClCompile Include="neo\hooks\functions\end_scene.cpp" />
@@ -89,6 +90,7 @@
     <ClInclude Include="neo\features\chams.h" />
     <ClInclude Include="neo\features\esp.h" />
     <ClInclude Include="neo\features\lag_compensation.h" />
+    <ClInclude Include="neo\features\misc.h" />
     <ClInclude Include="neo\features\movement.h" />
     <ClInclude Include="neo\features\prediction.h" />
     <ClInclude Include="neo\hooks\hooks.h" />

@@ -2,6 +2,7 @@
 #include "../../rendering/imgui/imgui.h"
 #include "../../rendering/menu.h"
 #include "../../features/esp.h"
+#include "../../features/misc.h"
 
 long __stdcall hooks::end_scene::hook(IDirect3DDevice9* device) {
 	IDirect3DStateBlock9* pixel_state = NULL;
@@ -21,6 +22,7 @@ long __stdcall hooks::end_scene::hook(IDirect3DDevice9* device) {
 	menu::render();
 	ImGui::GetStyle().AntiAliasedLines = true; //seems to look slightly better (maybe just my eyes fooling me)
 	esp::draw_list();
+	miscfeatures::watermark();
 	ImGui::Render();
 
 	ImGui_ImplDX9_RenderDrawData(ImGui::GetDrawData());

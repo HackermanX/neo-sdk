@@ -7,7 +7,7 @@ namespace options {
 
 	namespace legit {
 		inline bool backtrack = false;
-		inline bool fake_latency = true;
+		inline bool fake_latency = false;
 	}
 
 	namespace esp {
@@ -20,5 +20,10 @@ namespace options {
 		inline bool xqz = false;
 		inline color visible = color(0, 250, 154, 255);
 		inline color invisible = color(70, 130, 180, 255);
+	}
+
+	namespace misc {
+		inline bool watermark = true;
+		inline color watermark_color = color(55, 152, 237, 255);
 	}
 }

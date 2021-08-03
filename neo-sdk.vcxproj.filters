@@ -27,6 +27,7 @@
     <ClCompile Include="neo\features\movement.cpp" />
     <ClCompile Include="neo\hooks\functions\create_move.cpp" />
     <ClCompile Include="neo\hooks\hooks.cpp" />
+    <ClCompile Include="neo\features\misc.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="neo\buildtype.h" />
@@ -90,5 +91,6 @@
     <ClInclude Include="neo\rendering\imgui\imstb_truetype.h" />
     <ClInclude Include="neo\rendering\menu.h" />
     <ClInclude Include="neo\rendering\render.h" />
+    <ClInclude Include="neo\features\misc.h" />
   </ItemGroup>
 </Project>
