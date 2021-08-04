@@ -1,5 +1,5 @@
 #pragma once
 
-#define testing 1
-#define release 0
 #define debug 0
+#define testing 0
+#define release 1

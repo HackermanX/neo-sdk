@@ -3,6 +3,7 @@
 #include "../csgo/sdk.h"
 #include "../csgo/misc/input.h"
 #include "../csgo/misc/options.h"
+#include "../buildtype.h"
 
 namespace menu {
 	void init() {
@@ -43,8 +44,28 @@ namespace menu {
 			if (ImGui::BeginTabItem("esp")) {
 				ImGui::SetCursorPosX(5.f);
 
-				ImGui::Checkbox("box esp", &options::esp::box); ImGui::SameLine();
+				ImGui::Checkbox("box esp", &options::esp::box_esp); ImGui::SameLine();
 				ImGui::ColorEdit5("##box_color", &options::esp::box_color, flags_alpha);
+
+				ImGui::SetCursorPosX(5.f);
+
+				ImGui::Checkbox("health esp", &options::esp::health_esp); ImGui::SameLine();
+				ImGui::ColorEdit5("##health_color", &options::esp::health_color, flags_alpha);
+
+				ImGui::SetCursorPosX(5.f);
+#if testing
+				ImGui::Checkbox("weapon esp", &options::esp::weapon_esp); ImGui::SameLine();  //crashes -> line 447 imgui_draw.cpp | cba to fix
+				ImGui::ColorEdit5("##weapon_color", &options::esp::weapon_color, flags_alpha);
+#endif
+				ImGui::SetCursorPosX(5.f);
+
+				ImGui::Checkbox("ammo esp", &options::esp::ammo_esp); ImGui::SameLine();
+				ImGui::ColorEdit5("##ammo_color", &options::esp::ammo_color, flags_alpha);
+
+				ImGui::SetCursorPosX(5.f);
+
+				ImGui::Checkbox("scoped esp", &options::esp::scoped_esp); ImGui::SameLine();
+				ImGui::ColorEdit5("##scoped_color", &options::esp::scoped_color, flags_alpha);
 
 				ImGui::EndTabItem();
 			}
